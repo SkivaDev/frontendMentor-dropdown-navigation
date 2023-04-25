@@ -1,0 +1,10 @@
+@use "../../scss/" as *;
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 160px;
+  place-items: center;
+  max-width: 896px;
+  
+}
