@@ -1,10 +1,84 @@
 @use "../../scss/" as *;
 
 .section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 160px;
-  place-items: center;
-  max-width: 896px;
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 80px);
+
+  @include mobile {
+    align-items: flex-start;
+  }
+
+  .main-container {
+    display: grid;
+    max-width: 1100px;
+    gap: 80px;
+    grid-template-columns: 1fr 1fr;
+    @include mobile {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    .main-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      @include mobile {
+        align-items: center;
+        text-align: center;
+        gap: 32px;
+      }
+    
+      .main-heading {
+        font-size: 75px;
+        line-height: 80px;
+        @include mobile {
+          font-size: 34.2px;
+        }
+      }
+      .main-heading br {
+        @include mobile {
+          display: none;
+        }
+      }
+      .main-content {
+        font-size: 19px;
+        line-height: 1.8;
+        color: $medium-gray-color;
+      }
+      .logos {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        @include mobile {
+          width: 100%;
+          padding-inline: 1rem;
+          flex-wrap: wrap;
+        }
+      }
+    }
+
+  }
+
+
+  .primary-btn {
+    background-color: $almost-black-color;
+    width: fit-content;
+    padding: 16px 32px;
+    color: $almost-white-color;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    @include mobile {
+      font-size: 16px;
+    }
+  }
+  .primary-btn:hover {
+    background-color: $almost-white-color;
+    border: 1px solid $almost-black-color;
+    color: $almost-black-color;
+    font-weight: 700;
+  }
 }
+

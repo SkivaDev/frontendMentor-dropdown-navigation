@@ -38,24 +38,15 @@ img {
   max-width: 100%;
 }
 
-.outlined-btn, .transparent-btn {
-  padding: 16px 32px;
-  border-radius: 15px;
-  color: $medium-gray-color;
-  cursor: pointer;
-  background: transparent;
-}
-.transparent-btn {
-  border: none;
-}
-.transparent-btn:hover {
-  color: $almost-black-color;
-  font-weight: 700;
-}
-.outlined-btn {
-  border: 1px solid $almost-black-color;
-}
-.outlined-btn:hover {
-  color: $almost-black-color;
-  font-weight: 700;
+.overflow {
+  @include mobile {
+    background-color: black;
+    display: none;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 30%;
+    opacity: 0.7;
+  }
 }

@@ -1,64 +1,167 @@
 @use "../../scss/" as *;
 
-// .header {
-//   height: 62px;
-//   width: 100%;
+.header {
+  height: 80px;
+  display: flex;
+  align-items: center;
 
-//   &__wrap {
-//     display: flex;
-//     justify-content:space-between;
-//     align-items: center;
-//     height: 100%;
-//     padding: 0 20px;
-//     margin: auto;
-//     max-width: 1090px;
-
-//     // @include tablet {
-//     //   padding: 0 15px;
-//     // }
-//     // @include mobile {
-//     //   gap: 15px;
-//     // }
-//   }
-
-//   &__logo {
-
-//     img {
-//       height: 20px;
-//       width: 100%;
-//     }
-//   }
-//   &__links {
-//     display: flex;
-//     // justify-content: space-between;
-//     align-items: center;
-//     height: 100%;
-//     gap: 15px;
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-inline: 48px;
+    font-size: 16px;
+    @include mobile {
+      padding-inline: 16px;
+    }
     
-//     li {
-//       display: flex;
-//       justify-content: center;
-//       align-items: center;
-//       position: relative;
-//       font-size: 16rem;
-//     }
+    .nav-left {
+      display: flex;
+      align-items: center;
 
-//     @include tablet {
-//       width: 250px;
-//       display: block;
-//       position: absolute;
-//       top: -700px;
-//       left: -2000px;
-//       right: 0;
-//       text-align: center;
-//       transition: all .5s ease;
-//       z-index: 99;
-//       margin: 0;
-//     }
-//     &.active-burger {
-//       top: 62px;
-//       left: 0;
-//       right: 0;
-//     }
-//   }
-// }
+      .nav-logo {
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-links {
+        display: flex;
+        margin-left: 64px;
+        list-style: none;
+        gap: 40px;
+        font-weight: 700;
+
+        @include mobile {
+          display: none;
+        }
+
+        li {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          color: $medium-gray-color;
+          position: relative;
+          // user-select: none;
+          cursor: pointer;
+        }
+        li:hover {
+          color: $almost-black-color;
+        }
+      }
+
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      @include mobile {
+        display: flex;
+        cursor: pointer;
+        z-index: 999;
+      }
+    }
+    .mobile-menu {
+      display: none;
+      @include mobile {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: $almost-white-color;
+        padding: 80px 32px;
+      }
+      .mobile-links {
+        @include mobile {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+          list-style: none;
+          
+          li {
+            display: flex;
+            flex-direction: column;
+            color: $medium-gray-color;
+            cursor: pointer;
+
+            p {
+              display: flex;
+              align-items: center;
+              gap: 16px;
+            }
+            .mobile-sub {
+              display: none;
+              flex-direction: column;
+              gap: 16px;
+              margin: 16px;
+            }
+          }
+        }
+      }
+    }
+    .sub-menu {
+      display: none;
+      position: absolute;
+      flex-direction: column;
+      background-color: white;
+      gap: 1rem;
+      box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
+      padding: 1rem;
+      border-radius: 10px;
+
+      .sub-link {
+        display: flex;
+        align-items: center;
+        width: 150px;
+        gap: 8px;
+      }
+      &.one {
+        bottom: -170px;
+        right: 0;
+      }
+      &.two {
+        bottom: -136px;
+      }
+    }
+    .active .arrow {
+      transform: rotate(180deg);
+      transition: 0.2s;
+    }
+    .active-menu {
+      display: flex !important;
+    }
+
+
+    .nav-right {
+      @include mobile {
+        display: none;
+      }
+
+      .outlined-btn,
+      .transparent-btn {
+        padding: 16px 32px;
+        border-radius: 15px;
+        color: $medium-gray-color;
+        cursor: pointer;
+        background: transparent;
+      }
+      .transparent-btn {
+        border: none;
+      }
+      .transparent-btn:hover {
+        color: $almost-black-color;
+        font-weight: 700;
+      }
+      .outlined-btn {
+        border: 1px solid $almost-black-color;
+      }
+      .outlined-btn:hover {
+        color: $almost-black-color;
+        font-weight: 700;
+      }
+    }
+  }
+}
