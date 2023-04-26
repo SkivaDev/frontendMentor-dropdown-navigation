@@ -11,10 +11,17 @@ import "./navbar.scss";
 
 function Navbar({isActive, handleClick}) {
 
-  const [isLinkActive, setIsLinkActive] = useState(false);
+  // const [isLinkActive, setIsLinkActive] = useState(false);
 
-  const handleLinkActive = () => {
-    setIsLinkActive(!isLinkActive);
+  const [isLinkOneActive, setIsLinkOneActive] = useState(false);
+  const [isLinkTwoActive, setIsLinkTwoActive] = useState(false);
+  // const [isLinkThreeActive, setIsLinkThreeActive] = useState(false);
+
+  const handleLinkOneActive = () => {
+    setIsLinkOneActive(!isLinkOneActive);
+  }
+  const handleLinkTwoActive = () => {
+    setIsLinkTwoActive(!isLinkTwoActive);
   }
 
   return (
@@ -25,10 +32,10 @@ function Navbar({isActive, handleClick}) {
             <img src={logo} alt="logo" />
           </div>
           <ul className="nav-links">
-            <li className={isLinkActive ? 'active' : null} onClick={handleLinkActive}>
+            <li className={isLinkOneActive ? 'active' : null} onClick={handleLinkOneActive}>
               Features
               <img className="arrow" src={icon} alt="icon" />
-              <div className={`sub-menu one ${isLinkActive ? 'active-menu' : null}`}>
+              <div className={`sub-menu one ${isLinkOneActive ? 'active-menu' : null}`}>
                 <p className="sub-link">
                   <img src={icon_todo} alt="icon-todo" />
                   Todo List
@@ -47,17 +54,17 @@ function Navbar({isActive, handleClick}) {
                 </p>
               </div>
             </li>
-            <li className={isLinkActive ? 'active' : null} onClick={handleLinkActive}>
+            <li className={isLinkTwoActive ? 'active' : null} onClick={handleLinkTwoActive}>
               Company
               <img className="arrow" src={icon} alt="icon" />
-              <div className={`sub-menu two ${isLinkActive ? 'active-menu' : null}`}>
+              <div className={`sub-menu two ${isLinkTwoActive ? 'active-menu' : null}`}>
                 <p className="sub-link">History</p>
                 <p className="sub-link">Our team</p>
                 <p className="sub-link">Blog</p>
               </div>
             </li>
-            <li onClick={handleLinkActive}>Careers</li>
-            <li onClick={handleLinkActive}>About</li>
+            <li>Careers</li>
+            <li>About</li>
           </ul>
         </div>
         <div className={`mobile-menu-btn ${isActive ? 'active-btn' : null}`} onClick={handleClick}>
@@ -65,11 +72,11 @@ function Navbar({isActive, handleClick}) {
         </div>
         <div className={`mobile-menu ${isActive ? 'active-menu': null}`}>
           <ul className="mobile-links">
-            <li className={isLinkActive ? 'active' : null}  onClick={handleLinkActive}>
+            <li className={isLinkOneActive ? 'active' : null}  onClick={handleLinkOneActive}>
               <p>
                 Features <img className="arrow" src={icon} alt="icon" />
               </p>
-              <div className={`mobile-sub one ${isLinkActive ? 'active-menu' : null}`}>
+              <div className={`mobile-sub one ${isLinkOneActive ? 'active-menu' : null}`}>
                 <p className="sub-link">
                   <img src={icon_todo} alt="icon-todo" />
                   Todo List
@@ -88,18 +95,18 @@ function Navbar({isActive, handleClick}) {
                 </p>
               </div>
             </li>
-            <li className={isLinkActive ? 'active' : null} onClick={handleLinkActive}>
+            <li className={isLinkTwoActive ? 'active' : null} onClick={handleLinkTwoActive}>
               <p>
                 Company <img className="arrow" src={icon} alt="icon" />
               </p>
-              <div className={`mobile-sub two ${isLinkActive ? 'active-menu' : null}`}>
+              <div className={`mobile-sub two ${isLinkTwoActive ? 'active-menu' : null}`}>
                 <p className="sub-link">History</p>
                 <p className="sub-link">Our team</p>
                 <p className="sub-link">Blog</p>
               </div>
             </li>
-            <li className={isLinkActive ? 'active' : null} onClick={handleLinkActive}>Careers</li>
-            <li className={isLinkActive ? 'active' : null}  onClick={handleLinkActive}>About</li>
+            <li>Careers</li>
+            <li>About</li>
           </ul>
         </div>
         <div className="nav-right">

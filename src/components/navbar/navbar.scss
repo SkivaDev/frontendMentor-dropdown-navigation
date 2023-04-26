@@ -71,6 +71,7 @@
         right: 0;
         top: 0;
         bottom: 0;
+        width: 70%;
         background-color: $almost-white-color;
         padding: 80px 32px;
       }
@@ -107,9 +108,9 @@
       position: absolute;
       flex-direction: column;
       background-color: white;
-      gap: 1rem;
+      gap: 16px;
       box-shadow: 0px 0px 10px 3px rgba(0, 0, 0, 0.75);
-      padding: 1rem;
+      padding: 16px;
       border-radius: 10px;
 
       .sub-link {
@@ -119,11 +120,11 @@
         gap: 8px;
       }
       &.one {
-        bottom: -170px;
+        bottom: -190px;
         right: 0;
       }
       &.two {
-        bottom: -136px;
+        bottom: -150px;
       }
     }
     .active .arrow {
